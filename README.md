@@ -18,29 +18,36 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 
 ## Installation & Dependencies
 
-* Install [BitBar](https://github.com/matryer/bitbar), preferably into `/Applications`
-Launch BitBar and set your BitBar plugins directory; quit BitBar
+### Manual installations
+Install into `/Applications`
+* [BitBar](https://github.com/matryer/bitbar) 
+* Launch BitBar and set your BitBar plugins directory; quit BitBar
 
-### Download the following software and install manually
-
+Install into `/usr/local/bin`
 * [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
-Install into `/usr/local/bin`; Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`; test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`; if it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
+* Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`
+* Test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`
+* If it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
 
-### Install the following software
+### Homebrew installations (tap)
+* [mapbox](https://github.com/mapbox/mapbox-cli-py): `brew install mapbox/cli/mapbox`
+
+### Homebrew installations (regular)
 Install with [Homebrew](http://brew.sh) (or a similar manager) with `brew install <software-name>`
 
 * [jq](https://stedolan.github.io/jq/)
-* [mapbox](https://github.com/mapbox/mapbox-cli-py)
-You need to install the Mapbox cli by tapping the repository: `brew install mapbox/cli/mapbox`
 * [miller](https://github.com/johnkerl/miller)
 * [node](https://nodejs.org)
+
 You need to install Node.js to install further software with `npm`(see below)
+
 * [terminal-notifier](https://github.com/alloy/terminal-notifier)
+
 You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume; if you don't install terminal-notifier or deactivate Spotlight, VBBar will call notifications via AppleScript instead
 
-### Install the following two dependencies with `npm install -g`
-* [vbb-cli](https://github.com/derhuerst/vbb-cli)
-This will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
+### Node.js installations
+Install with `npm install -g`
+* [vbb-cli](https://github.com/derhuerst/vbb-cli): this will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
 * [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
 ### Final steps with VBBar/BitBar
