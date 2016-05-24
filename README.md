@@ -63,3 +63,5 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 ▪▪ Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes)
 
 ▪▪ Launch BitBar; VBBar should now load
+
+▪▪ Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System")
