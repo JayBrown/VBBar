@@ -30,6 +30,7 @@ Install into `/usr/local/bin`
 * If it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
 
 ### Homebrew installations (tap)
+Install with [Homebrew](http://brew.sh)
 * [mapbox](https://github.com/mapbox/mapbox-cli-py): `brew install mapbox/cli/mapbox`
 
 ### Homebrew installations (regular)
