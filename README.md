@@ -18,58 +18,43 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 
 ## Installation & Dependencies
 
-▪ Install [BitBar](https://github.com/matryer/bitbar), preferably into `/Applications`
+* Install [BitBar](https://github.com/matryer/bitbar), preferably into `/Applications`
+Launch BitBar and set your BitBar plugins directory; quit BitBar
 
-▪▪ Launch BitBar and set your BitBar plugins directory; quit BitBar
+### Download the following software and install manually
 
-▪ Download the following software and install manually into `/usr/local/bin`
+* [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
+Install into `/usr/local/bin`; Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`; test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`; if it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
 
-▪▪ [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
+### Install the following software
+Install with [Homebrew](http://brew.sh) (or a similar manager) with `brew install <software-name>`
 
-▪▪▪ Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`; test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`; if it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
+* [jq](https://stedolan.github.io/jq/)
+* [mapbox](https://github.com/mapbox/mapbox-cli-py)
+You need to install the Mapbox cli by tapping the repository: `brew install mapbox/cli/mapbox`
+* [miller](https://github.com/johnkerl/miller)
+* [node](https://nodejs.org)
+You need to install Node.js to install further software with `npm`(see below)
+* [terminal-notifier](https://github.com/alloy/terminal-notifier)
+You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume; if you don't install terminal-notifier or deactivate Spotlight, VBBar will call notifications via AppleScript instead
 
-▪ Install the following software with [Homebrew](http://brew.sh) (or a similar manager) with `brew install <software-name>`
+### Install the following two dependencies with `npm install -g`
+* [vbb-cli](https://github.com/derhuerst/vbb-cli)
+This will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
+* [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
-▪▪ [jq](https://stedolan.github.io/jq/)
-
-▪▪ [mapbox](https://github.com/mapbox/mapbox-cli-py)
-
-▪▪▪ You need to install the Mapbox cli by tapping the repository: `brew install mapbox/cli/mapbox`
-
-▪▪ [miller](https://github.com/johnkerl/miller)
-
-▪▪ [node](https://nodejs.org)
-
-▪▪▪ You need to install Node.js to install further software with `npm`(see below)
-
-▪▪ [terminal-notifier](https://github.com/alloy/terminal-notifier)
-
-▪▪▪ You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume; if you don't install terminal-notifier or deactivate Spotlight, VBBar will call notifications via AppleScript instead
-
-▪ Install the following two dependencies with `npm install -g`
-
-▪▪ [vbb-cli](https://github.com/derhuerst/vbb-cli)
-
-▪▪▪ This will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
-
-▪▪ [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
-
-▪ Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
-
-▪▪ Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
-
-▪▪ Once launched, VBBar will `chmod +x` the remaining subscripts by itself
-
-▪▪ Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes)
-
-▪▪ Launch BitBar; VBBar should now load
-
-▪▪ Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System")
+### Final steps with VBBar/BitBar
+* Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
+* Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
+* Once launched, VBBar will `chmod +x` the remaining subscripts by itself
+* Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes)
+* Launch BitBar; VBBar should now load
+* Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System")
 
 ## To-do
 
-▪ If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
-▪ Include network lines operating from nearby stations
-▪ Refine address search (possibly needed: free alternative to kauperts Straßenverzeichnis)
-▪ Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
-▪ sqlite db integration
+* If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
+* Include network lines operating from nearby stations
+* Refine address search (possibly needed: free alternative to kauperts Straßenverzeichnis)
+* Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
+* sqlite db integration
