@@ -18,53 +18,48 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 
 ## Installation & Dependencies
 
-· Install [BitBar](https://github.com/matryer/bitbar), preferably into `/Applications`
-·· Launch BitBar and set your BitBar plugins directory; quit BitBar
+▪ Install [BitBar](https://github.com/matryer/bitbar), preferably into `/Applications`
 
-· Download the following software and install manually into `/usr/local/bin`
+▪▪ Launch BitBar and set your BitBar plugins directory; quit BitBar
 
-·· [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
+▪ Download the following software and install manually into `/usr/local/bin`
 
-··· Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`
+▪▪ [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
 
-··· Test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`
+▪▪▪ Make executable with `chmod +x /usr/local/bin/CoreLocationCLI`; test CoreLocationCLI in your shell, e.g. with `CoreLocationCLI -h`; if it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
 
-··· If it doesn't work, dequarantine with `xattr -dr com.apple.quarantine /usr/local/bin/CoreLocationCLI`
+▪ Install the following software with [Homebrew](http://brew.sh) (or a similar manager) with `brew install <software-name>`
 
-· Install the following software with [Homebrew](http://brew.sh) (or a similar manager) with `brew install <software-name>`
+▪▪ [jq](https://stedolan.github.io/jq/)
 
-·· [jq](https://stedolan.github.io/jq/)
+▪▪ [mapbox](https://github.com/mapbox/mapbox-cli-py)
 
-·· [mapbox](https://github.com/mapbox/mapbox-cli-py)
+▪▪▪ You need to install the Mapbox cli by tapping the repository: `brew install mapbox/cli/mapbox`
 
-··· You need to install the Mapbox cli by tapping the repository: `brew install mapbox/cli/mapbox`
+▪▪ [miller](https://github.com/johnkerl/miller)
 
-·· [miller](https://github.com/johnkerl/miller)
+▪▪ [node](https://nodejs.org)
 
-·· [node](https://nodejs.org)
+▪▪▪ You need to install Node.js to install further software with `npm`(see below)
 
-··· You need to install Node.js to install further software with `npm`(see below)
+▪▪ [terminal-notifier](https://github.com/alloy/terminal-notifier)
 
-·· [terminal-notifier](https://github.com/alloy/terminal-notifier)
+▪▪▪ You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume; if you don't install terminal-notifier or deactivate Spotlight, VBBar will call notifications via AppleScript instead
 
-··· You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume
+▪ Install the following two dependencies with `npm install -g`
 
-··· If you don't install terminal-notifier or deactivate Spotlight, VBBar will call notifications via AppleScript instead
+▪▪ [vbb-cli](https://github.com/derhuerst/vbb-cli)
 
-· Install the following two dependencies with `npm install -g`
+▪▪▪ This will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
 
-·· [vbb-cli](https://github.com/derhuerst/vbb-cli)
+▪▪ [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
-··· This will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
+▪ Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
 
-··· [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
+▪▪ Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 
-· Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
+▪▪ Once launched, VBBar will `chmod +x` the remaining subscripts by itself
 
-·· Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
+▪▪ Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes)
 
-·· Once launched, VBBar will `chmod +x` the remaining subscripts by itself
-
-·· Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes)
-
-·· Launch BitBar; VBBar should now load
+▪▪ Launch BitBar; VBBar should now load
