@@ -1,4 +1,4 @@
-# VBBar
+# ![VBBar](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png) VBBar
 **BitBar script to access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
 
 ## Current status
@@ -71,3 +71,8 @@ Install with `npm install -g`
 
 * There are people (like me) who don't have a smartphone, but need to look up public transportation information, manage routes/travel etc.
 * There are people (like future me) who have a smartphone, but don't want to look at their smartphone every time they need public transportation information (and possibly get distracted by useless things in the process)
+
+## Disclaimer (obligatory)
+Powered by VBB GmbH. Subject to change. No liability assumed.
+
+![VBB](https://github.com/JayBrown/VBBar/blob/master/img/VBB_logo.png)
