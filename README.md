@@ -20,7 +20,7 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 
 ### Manual installations
 Install into `/Applications`
-* [BitBar](https://github.com/matryer/bitbar) 
+* [BitBar](https://github.com/matryer/bitbar) (remember, you need v2, currently in beta stage)
 * Launch BitBar and set your BitBar plugins directory; quit BitBar
 
 Install into `/usr/local/bin`
