@@ -65,3 +65,8 @@ Install with `npm install -g`
 * Refine address search (possibly needed: free alternative to kauperts Straßenverzeichnis)
 * Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
 * sqlite db integration
+
+## Why VBBar?
+
+* There are people (like me) who don't have a smartphone, but need to look up public transportation information, manage routes/travel etc.
+* There are people (like future me) who have a smartphone, but don't want to look at their smartphone every time they need public transportation information (and possibly get distracted by useless things in the process)
