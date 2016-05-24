@@ -65,3 +65,11 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 ▪▪ Launch BitBar; VBBar should now load
 
 ▪▪ Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System")
+
+## To-do
+
+▪ If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
+▪ Include network lines operating from nearby stations
+▪ Refine address search (possibly needed: free alternative to kauperts Straßenverzeichnis)
+▪ Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
+▪ sqlite db integration
