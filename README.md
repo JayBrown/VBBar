@@ -64,8 +64,6 @@ Install with `npm install -g <software-name>`
 
 ## To-do
 
-* Walking directions to nearby station (or generally to a station) in submenu
-* User setting: increase/decrease VBBar refresh rate (subscript: `mv` command, rename main shell script & refresh)
 * If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
 * Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis = possible?
 * Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
