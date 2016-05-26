@@ -20,7 +20,7 @@ For the former you need to apply by email, and you will receive an ID for the te
 
 For the latter you just need to register for a free starter plan. Be sure to generate your own individual access token, i.e. don't use the Mapbox default public token. I'd prefer using a geocoding library/service that will work without API tokens, so if you know a better alternative, one that works like **mapbox** as a cli (bash), and one that also includes **automated walking directions** between two sets of coordinates, let us know.
 
-The "Find Berlin Street" function currently does not use an API. It simply uses the cURL command on the public/free Berlin street database maintained by KAUPERTS. Eventually VBBar needs a more elegant solution in this regard.
+The "Find Berlin Address" function currently does not use an API for street names, precincts and postal codes. It simply uses the cURL command on the public/free Berlin street database maintained by KAUPERTS. Eventually VBBar needs a more elegant solution in this regard.
 
 ## Installation & Dependencies
 
