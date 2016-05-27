@@ -1,19 +1,18 @@
 # VBBar
 ![VBBar](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png)
 
-**BitBar script to access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
+**Access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
 
 ![VBBar-screengrab](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_grab.png)
 
 ## Current status
 alpha (to be released soon) … the script is still pretty wild… if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
 
-## Prerequisite
-[BitBar](https://github.com/matryer/bitbar) **v2 beta4** and higher
-
 Minimum OS X for full functionality: **10.10**
 
-## APIs
+## Prerequisites
+
+### API tokens
 First you need access keys/tokens for two APIs, one for the [VBB API](http://www.vbb.de/labs), and one for the public [Mapbox API](https://www.mapbox.com/studio/signup/?plan=starter).
 
 For the former you need to apply by email, and you will receive an ID for the test API. This is usually only given out to developers, but if you plan on improving VBBar or vbb-cli/vbb-stations-cli, then getting an access ID shouldn't be a problem. Once the underlying software [vbb-cli](https://github.com/derhuerst/vbb-cli) is approved by VBB, VBBar should work without using an individual API access ID. (Fingers crossed.)
@@ -22,12 +21,11 @@ For the latter you just need to register for a free starter plan. Be sure to gen
 
 The "Find Berlin Address" function currently does not use an API for street names, precincts and postal codes. It simply uses the cURL command on the public/free Berlin street database maintained by KAUPERTS. Eventually VBBar needs a more elegant solution in this regard.
 
-## Installation & Dependencies
-
 ### Manual installations
 Install into `/Applications`
-* [BitBar](https://github.com/matryer/bitbar) (remember, you need v2, currently in beta stage)
-* Launch BitBar and set your BitBar plugins directory; quit BitBar
+* [BitBar](https://github.com/matryer/bitbar): **v2 beta4** and higher needed
+* Launch BitBar and set your BitBar plugins directory
+* Quit BitBar
 
 Install into `/usr/local/bin`
 * [CoreLocationCLI](https://github.com/fulldecent/corelocationcli)
@@ -50,17 +48,17 @@ Install using [Homebrew](http://brew.sh) with `brew install <software-name>` (or
 You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.app on your volume; if you don't install terminal-notifier, or if you have deactivated Spotlight, VBBar will call notifications via AppleScript instead
 
 ### Node.js installations
-Install with `npm install -g <software-name>`
+After installing node, install the following software with `npm install -g <software-name>`
 * [vbb-cli](https://github.com/derhuerst/vbb-cli): this will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
 * [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
-### Final steps with VBBar/BitBar
+## Installation
+
 * Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Once launched, VBBar will `chmod +x` the remaining subscripts by itself
-* Regarding the main script, you can change "30m" to e.g. "15m", if you want a faster refresh rate (15 minutes instead of the default 30 minutes); plans are to add setting refresh rate as a user setting in VBBar (see below)
-* Launch BitBar; VBBar should now load
-* Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System")
+* Launch BitBar again; it should now load VBBar
+* Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain
 
 ## To-do
 
@@ -69,6 +67,7 @@ Install with `npm install -g <software-name>`
 * Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
 * sqlite db integration
 * Add per-line information? E.g. all the stops for the U7 when clicked?
+* Bundle VBBar with BitBarDistro and build an installer with Platypus including all prerequisites & dependencies?
 
 ## Why VBBar?
 
