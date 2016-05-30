@@ -6,7 +6,7 @@
 ![VBBar-screengrab](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_grab.png)
 
 ## Current status
-alpha (to be released soon) … the script is still pretty wild… if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
+alpha (pre-release) … the script is still pretty wild… if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
 
 Minimum OS X for full functionality: **10.10**
 
