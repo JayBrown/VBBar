@@ -49,12 +49,12 @@ You need to have Spotlight enabled for `mdfind` to locate the terminal-notifier.
 
 ### Node.js installations
 After installing node, install the following software with `npm install -g <software-name>`
-* [vbb-cli](https://github.com/derhuerst/vbb-cli): this will (among other things) put `vbb-dep` and `vbb-route` into `/usr/local/bin`
+* [vbb-cli](https://github.com/derhuerst/vbb-cli): this will (among other things) put `vbb-dep` and `vbb-route` symlinks into `/usr/local/bin`
 * [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
 ## Installation
 
-* Download the main VBBar script and the VBBar subfolder containing the subscripts; move both main script and subfolder into your BitBar plugins directory
+* [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); move both main script and subfolder into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Once launched, VBBar will `chmod +x` the remaining subscripts by itself
 * Launch BitBar again; it should now load VBBar
@@ -62,7 +62,7 @@ After installing node, install the following software with `npm install -g <soft
 
 ## To-do
 
-* If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
+* If possible, use a tokenless geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
 * Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis => possible?
 * When printer is selected (automatically or by user), script should check if printer is actually online (i.e. physically connected) => possible?
 * Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
