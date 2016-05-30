@@ -63,7 +63,8 @@ After installing node, install the following software with `npm install -g <soft
 ## To-do
 
 * If possible, use a geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
-* Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis = possible?
+* Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis => possible?
+* When printer is selected (automatically or by user), script should check if printer is actually online (i.e. physically connected) => possible?
 * Add functionality such as: previous searches, route to destination by departure/arrival time, favorite routes/stations/addresses
 * sqlite db integration
 * Add per-line information? E.g. all the stops for the U7 when clicked?
