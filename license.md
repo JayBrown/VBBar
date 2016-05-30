@@ -1,6 +1,4 @@
-Copyright (c) 2016 Joss Brown (pseud.)
-German laws apply
-Place of jurisdiction: Berlin, Germany
+Copyright (c) 2016 Joss Brown (pseud.) -- German laws apply -- Place of jurisdiction: Berlin, Germany
 
 ---
 
