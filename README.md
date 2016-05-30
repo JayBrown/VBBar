@@ -56,8 +56,8 @@ After installing node, install the following software with `npm install -g <soft
 
 * [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); move both main script and subfolder into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
-* Once launched, VBBar will `chmod +x` the remaining subscripts by itself
 * Launch BitBar again; it should now load VBBar
+* During load, VBBar will `chmod +x` the remaining subscripts
 * Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain
 
 ## To-do
