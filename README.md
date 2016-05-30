@@ -6,7 +6,7 @@
 ![VBBar-screengrab](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_grab.png)
 
 ## Current status
-alpha (pre-release) … the script is still pretty wild… if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
+Alpha (pre-release)… the script is still pretty wild; if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
 
 Minimum OS X for full functionality: **10.10**
 
@@ -54,7 +54,7 @@ After installing node, install the following software with `npm install -g <soft
 
 ## Installation
 
-* [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); move both main script and subfolder into your BitBar plugins directory
+* [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); expand the archive; move both main script and subfolder into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
 * During load, VBBar will `chmod +x` the remaining subscripts
