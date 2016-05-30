@@ -23,7 +23,7 @@ The "Find Berlin Address" function currently does not use an API for street name
 
 ### Manual installations
 Install into `/Applications`
-* [BitBar](https://github.com/matryer/bitbar): **v2 beta4** and higher needed
+* [BitBar](https://github.com/matryer/bitbar): **v2 beta4** or higher needed
 * Launch BitBar and set your BitBar plugins directory
 * Quit BitBar
 
