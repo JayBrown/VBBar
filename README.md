@@ -1,4 +1,4 @@
-# VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/> [![Build Status]]
+# VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/> [![Build Status]
 
 **BitBar plugin (shell script) to access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
 
