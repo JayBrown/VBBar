@@ -12,7 +12,7 @@
 [![VBBar-depend-tnote](https://img.shields.io/badge/dependency-terminal--notifer%201.6.3-green.svg)](https://github.com/alloy/terminal-notifier)
 [![VBBar-depend-vbbdep](https://img.shields.io/badge/dependency-vbb--dep%200.3.1-ff69b4.svg)](https://github.com/derhuerst/vbb-cli)
 [![VBBar-depend-vbbst](https://img.shields.io/badge/dependency-vbb--stations%200.6.0-ff69b4.svg)](https://github.com/derhuerst/vbb-stations-cli)
-[![VBBar-license](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/JayBrown/VBBar/blob/master/license.md)
+[![VBBar-license](http://img.shields.io/badge/license-MIT+-blue.svg)](https://github.com/JayBrown/VBBar/blob/master/license.md)
 
 # VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/>
 
