@@ -68,7 +68,6 @@ After installing node, install the following software with `npm install -g <soft
 * [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
 ## Installation
-
 * [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); expand the archive; move both main script and subfolder into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
@@ -76,7 +75,7 @@ After installing node, install the following software with `npm install -g <soft
 * Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
 
 ## To-do
-
+* mapbox traceback errors: sending stderr to /dev/null enough?
 * If possible, use a tokenless geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
 * Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis => possible?
 * When printer is selected (automatically or by user), script should check if printer is actually online (i.e. physically connected) => possible?
@@ -86,7 +85,6 @@ After installing node, install the following software with `npm install -g <soft
 * Bundle VBBar with BitBarDistro and build an installer with Platypus including all prerequisites & dependencies?
 
 ## Why VBBar?
-
 * There are people (like me) who don't have a smartphone, but need to look up public transportation information, manage routes/travel etc.
 * There are people (like future me) who have a smartphone, but don't want to look at their smartphone every time they need public transportation information (and possibly get distracted by useless things in the process)
 
