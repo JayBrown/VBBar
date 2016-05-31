@@ -1,4 +1,4 @@
-![VBBar-platform-osx](https://img.shields.io/badge/platform-osx-lightgrey.svg)
+![VBBar-platform-osx](https://img.shields.io/badge/platform-OS%20X-lightgrey.svg)
 ![VBBar-code-shell](https://img.shields.io/badge/code-shell-yellow.svg)
 [![VBBar-prereq-bitbar](https://img.shields.io/badge/prerequisite-BitBar%202.0%20beta4-brightgreen.svg)](https://github.com/matryer/bitbar)
 [![VBBar-api-vbb](https://img.shields.io/badge/api-VBB-orange.svg)](http://www.vbb.de/labs)
