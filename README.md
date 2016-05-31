@@ -1,3 +1,8 @@
+[![Dependency Status](http://img.shields.io/gemnasium/JayBrown/VBBar.svg?style=flat-square)](https://gemnasium.com/JayBrown/VBBar)
+[![Code Climate](http://img.shields.io/codeclimate/github/JayBrown/VBBar.svg?style=flat-square)](https://codeclimate.com/github/JayBrown/VBBar)
+[![Gem Version](http://img.shields.io/gem/v/VBBar.svg?style=flat-square)](https://rubygems.org/gems/VBBar)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://JayBrown.mit-license.org)
+
 # VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/>
 
 **BitBar plugin (shell script) to access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
