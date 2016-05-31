@@ -1,5 +1,6 @@
-[![CocoaPods](https://img.shields.io/cocoapods/p/AFNetworking.svg?maxAge=2592000)]()
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://JayBrown.mit-license.org)
+[![VBBar-platform-osx](https://img.shields.io/badge/platform-osx-lightgrey.svg)]
+[![VBBar-dep-mapbox](https://img.shields.io/badge/dependency-mapbox-green.svg)
+[![VBBar-license](http://img.shields.io/:license-mit-blue.svg?style=flat-square)]
 
 # VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/>
 
