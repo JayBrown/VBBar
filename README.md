@@ -1,6 +1,18 @@
-[![VBBar-platform-osx](https://img.shields.io/badge/platform-osx-lightgrey.svg)]
-[![VBBar-dep-mapbox](https://img.shields.io/badge/dependency-mapbox-green.svg)
-[![VBBar-license](http://img.shields.io/:license-mit-blue.svg?style=flat-square)]
+![VBBar-platform-osx](https://img.shields.io/badge/platform-osx-lightgrey.svg)
+![VBBar-code-shell](https://img.shields.io/badge/code-shell-yellow.svg)
+![VBBar-prereq-bitbar](https://img.shields.io/badge/prerequisite-BitBar%202.0%20beta4-brightgreen.svg)
+![VBBar-api-vbb](https://img.shields.io/badge/api-VBB-orange.svg)
+![VBBar-api-mb](https://img.shields.io/badge/api-Mapbox-orange.svg)
+![VBBar-depend-clcli](https://img.shields.io/badge/dependency-CoreLocationCLI%202.0.0-green.svg)
+![VBBar-depend-jq](https://img.shields.io/badge/dependency-jq%201.5-green.svg)
+![VBBar-depend-mapbox](https://img.shields.io/badge/dependency-mapbox%200.3.1-green.svg)
+![VBBar-depend-mlr](https://img.shields.io/badge/dependency-mlr%204.0.0-green.svg)
+![VBBar-depend-node](https://img.shields.io/badge/dependency-node%206.2.0-green.svg)
+![VBBar-depend-node](https://img.shields.io/badge/dependency-npm%203.8.9-green.svg)
+![VBBar-depend-tnote](https://img.shields.io/badge/dependency-terminal--notifer%201.6.3-green.svg)
+![VBBar-depend-vbbdep](https://img.shields.io/badge/dependency-vbb--dep%200.3.1-green.svg)
+![VBBar-depend-vbbst](https://img.shields.io/badge/dependency-vbb--stations%200.6.0-ff69b4.svg)
+![VBBar-license](http://img.shields.io/:license-mit-blue.svg?style=flat-square)
 
 # VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/>
 
