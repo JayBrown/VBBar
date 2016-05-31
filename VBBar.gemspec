@@ -16,16 +16,13 @@ Gem::Specification.new do |spec|
 	spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
 	spec.require_paths = ['lib']
 
-	spec.add_dependency 'BitBar.app', '~> 2.0.0'
 	spec.add_dependency 'CoreLocationCLI', '~> 2.0.0'
 	spec.add_dependency 'jq', '~> 1.5'
 	spec.add_dependency 'mapbox', '~> 0.3.1'
-	spec.add_dependency 'Mapbox API access token'
 	spec.add_dependency 'mlr', '~> 1.5'
 	spec.add_dependency 'node', '~> 6.2.0'
 	spec.add_dependency 'npm', '~> 3.8.9'
 	spec.add_dependency 'terminal-notifier', '~> 1.6.3'
 	spec.add_dependency 'vbb-dep', '~> 0.3.1'
 	spec.add_dependency 'vbb-stations', '~> 0.6.0'
-	spec.add_dependency 'VBB API access ID'
 end
