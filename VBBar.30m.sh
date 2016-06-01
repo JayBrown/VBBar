@@ -694,8 +694,8 @@ Approximate Walking Time: $WALK_TIME Minute$TPLURAL" > /tmp/"$STATION_ID"-vbbPri
 			else
 				echo "----Show in Apple Maps… | terminal=false bash=/usr/bin/open param1=\"http://maps.apple.com/?saddr=$CURRENT_LAT,$CURRENT_LONG&daddr=$STATION_LAT,$STATION_LONG&q=${CURRENT_ADDR//\"}&dirflg=w&t=r\""
 			fi
-			echo "----Show in Google Maps… | terminal=false bash=/usr/bin/open param1=\"https://www.google.com/maps/dir/$CURRENT_LAT,$CURRENT_LONG/$STATION_LAT,$STATION_LONG/@$CURRENT_LAT,$CURRENT_LONG,17z/data=!4m2!4m1!3e2\""
-			echo "----Show in OpenStreetMap… | terminal=false bash=/usr/bin/open param1=\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route=$CURRENT_LAT%2C$CURRENT_LONG%3B$STATION_LAT%2C$STATION_LONG#map=17/$CURRENT_LAT/$CURRENT_LONG\""
+			echo "----Show in Google Maps… | href=https://www.google.com/maps/dir/$CURRENT_LAT,$CURRENT_LONG/$STATION_LAT,$STATION_LONG/@$CURRENT_LAT,$CURRENT_LONG,17z/data=!4m2!4m1!3e2"
+			echo "----Show in OpenStreetMap… | href=https://www.openstreetmap.org/directions?engine=graphhopper_foot&route=$CURRENT_LAT%2C$CURRENT_LONG%3B$STATION_LAT%2C$STATION_LONG#map=17/$CURRENT_LAT/$CURRENT_LONG"
 			if [[ "DISABLED_STATUS" != "true" ]] ; then
 				echo "--Walking Directions"
 				echo "$DIRECTIONS" | while IFS= read -r DIR_STEP
@@ -735,8 +735,8 @@ if [[ "$WIFI_STATUS" != "inactive" ]] ; then
 	if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
 		echo "--Maps"
 		echo "----Show in Apple Maps… | terminal=false bash=/usr/bin/open param1=\"http://maps.apple.com/?ll=$CURRENT_LAT,$CURRENT_LONG&q=${CURRENT_ADDR//\"}&spn=0.00674885265,0.0104983203&t=r\""
-		echo "----Show in Google Maps… | terminal=false bash=/usr/bin/open param1=\"https://www.google.com/maps/place/$CURRENT_LAT,$CURRENT_LONG/@$CURRENT_LAT,$CURRENT_LONG,17z\"" 
-		echo "----Show in OpenStreeMap… | terminal=false bash=/usr/bin/open param1=\"https://www.openstreetmap.org/search?query=$CURRENT_LAT%2C$CURRENT_LONG#map=17/$CURRENT_LAT/$CURRENT_LONG\""
+		echo "----Show in Google Maps… | href=https://www.google.com/maps/place/$CURRENT_LAT,$CURRENT_LONG/@$CURRENT_LAT,$CURRENT_LONG,17z"
+		echo "----Show in OpenStreeMap… | href=https://www.openstreetmap.org/search?query=$CURRENT_LAT%2C$CURRENT_LONG#map=17/$CURRENT_LAT/$CURRENT_LONG"
 	else
 		echo "--Show in Apple Maps… | terminal=false bash=/usr/bin/open param1=\"http://maps.apple.com/?ll=$CURRENT_LAT,$CURRENT_LONG&spn=0.00674885265,0.0104983203&t=r\""
 	fi
@@ -784,7 +784,7 @@ if ls "$PREFS_DIR"/*.pdf 1>/dev/null 2>&1 ; then
 	fi
 	if [[ "$CURRENT_INTERNET_STATUS" != "offline" ]] ; then
 		echo "-----"
-		echo "--More Network Maps Online… | terminal=false bash=/usr/bin/open param1=\"http://www.vbb.de/de/article/fahrplan/liniennetze/liniennetze/897.html\""
+		echo "--More Network Maps Online… | href=http://www.vbb.de/de/article/fahrplan/liniennetze/liniennetze/897.html"
 	fi
 else
 	if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
@@ -796,8 +796,8 @@ fi
 echo "-----"
 if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
 	echo "--Berlin Lines"
-	echo "----BVG | terminal=false bash=/usr/bin/open param1=\"https://www.bvg.de/en/Travel-information\""
-	echo "----S-Bahn | terminal=false bash=/usr/bin/open param1=\"http://www.s-bahn-berlin.de/fahrplanundnetz/linien\""
+	echo "----BVG | href=https://www.bvg.de/en/Travel-information"
+	echo "----S-Bahn | href=http://www.s-bahn-berlin.de/fahrplanundnetz/linien"
 else
 	echo "--Berlin Lines"
 fi
@@ -957,7 +957,9 @@ vbbar-submenu () {
 		echo "----$SUBSCRIPT | terminal=false bash=/usr/bin/open param1=\"$SUBSCR/$SUBSCRIPT\""
 	done
 	echo "-----"
-	echo "--Latest BitBar Release… | terminal=false bash=/usr/bin/open param1=https://github.com/matryer/bitbar/releases/latest"
+	echo "--BitBar"
+	echo "----Website… | href=https://getbitbar.com"
+	echo "----Releases… | href=https://github.com/matryer/bitbar/releases"
 }
 
 echo "VBBar"
