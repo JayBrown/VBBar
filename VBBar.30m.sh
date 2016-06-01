@@ -5,8 +5,8 @@
 # <bitbar.author>Joss Brown</bitbar.author>
 # <bitbar.author.github>https://github.com/JayBrown</bitbar.author.github>
 # <bitbar.desc>Access and search the Berlin and Brandenburg public transportation information from the OS X menu bar.</bitbar.desc>
-# <bitbar.image>URL GOES HERE</bitbar.image>
-# <bitbar.dependencies>CoreLocationCLI,jq,mapbox,mlr,node,terminal-notifier,vbb-dep,vbb-route,vbb-stations</bitbar.dependencies>
+# <bitbar.image>https://github.com/JayBrown/VBBar/blob/master/img/VBBar_grab.png</bitbar.image>
+# <bitbar.dependencies>CoreLocationCLI,jq,mapbox,mlr,node,npm,terminal-notifier,vbb-dep,vbb-route,vbb-stations</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/JayBrown/VBBar/blob/master/README.md</bitbar.abouturl>
 # <bitbar.droptypes>public.vcard</bitbar.droptypes>
 
