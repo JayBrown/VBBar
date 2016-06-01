@@ -372,6 +372,7 @@ if [[ "$WIFI_STATUS" == "init" ]] || [[ "$WIFI_STATUS" == "running" ]]; then
 else
 	CURRENT_LAT="n/a"
 	CURRENT_LONG="n/a"
+	COORD_STATUS="false"
 fi
 
 # uncomment for testing or edit in your own lat/long
@@ -397,7 +398,7 @@ fi
 # CURRENT_COORD="$CURRENT_LAT,$CURRENT_LONG"
 
 # get address & check for correct region
-if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
+if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$COORD_STATUS" != "false" ]] ; then
 	if [[ "$MB_STATUS" == "true" ]] ; then
 		CURRENT_GMAPS=$(/usr/local/bin/mapbox geocoding --reverse "[$CURRENT_LONG, $CURRENT_LAT]" -t address)
 		CURRENT_ADDR=$(echo "$CURRENT_GMAPS" | /usr/local/bin/jq '.features[0] .place_name' -M -r)
