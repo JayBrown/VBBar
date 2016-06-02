@@ -372,7 +372,7 @@ if [[ "$WIFI_STATUS" == "init" ]] || [[ "$WIFI_STATUS" == "running" ]]; then
 else
 	CURRENT_LAT="n/a"
 	CURRENT_LONG="n/a"
-	COORD_STATUS="false"
+	CTCOORD_STATUS="false"
 fi
 
 # uncomment for testing or edit in your own lat/long
@@ -398,7 +398,7 @@ fi
 # CURRENT_COORD="$CURRENT_LAT,$CURRENT_LONG"
 
 # get address & check for correct region
-if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$COORD_STATUS" != "false" ]] ; then
+if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$CTCOORD_STATUS" != "false" ]] ; then
 	if [[ "$MB_STATUS" == "true" ]] ; then
 		CURRENT_GMAPS=$(/usr/local/bin/mapbox geocoding --reverse "[$CURRENT_LONG, $CURRENT_LAT]" -t address)
 		CURRENT_ADDR=$(echo "$CURRENT_GMAPS" | /usr/local/bin/jq '.features[0] .place_name' -M -r)
@@ -414,6 +414,7 @@ if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$COORD_STATUS" != "false"
 	fi
 else
 	CURRENT_ADDR="n/a"
+	notify "Core Location error" "No local data available"
 fi
 
 #############
@@ -457,6 +458,8 @@ if [[ "$REGION" == "false" ]] ; then
 	echo "[Out of Region] | color=brown"
 elif [[ "$WIFI_STATUS" == "inactive" ]] ; then
 	echo "[Wi-Fi Inactive] | color=red"
+elif [[ "$CTCOORD_STATUS" == "false" ]] ; then
+	echo "[Core Location Error] | color=red"
 else
 	NEARBY_TOGGLE=$(defaults read "$PREFS" nearbyDepartures 2>/dev/null)
 	if [[ "$NEARBY_TOGGLE" == "" ]] ; then
@@ -494,6 +497,8 @@ else
 	echo "$NEARBY_ID_LIST" | while IFS= read -r STATION_ID
 	do
 		echo -n "" > "$DEP_TEMP_LOC"
+		STCOORD_STATUS=""
+		WALK_TIME=""
 		DISABLED_STATUS=""
 		while IFS= read -r DISABLED_STATION
 		do
@@ -507,8 +512,15 @@ else
 		STATION_LINES=$(echo "$STATION_LINES_RAW" | /usr/bin/tr , ' ' | xargs -n 1 | /usr/bin/sort -u | xargs)
 		STATION_LAT=$(echo "$STATION_RAW" | /usr/local/bin/mlr --icsv --onidx --ofs @ --rs lf cut -f latitude)
 		STATION_LONG=$(echo "$STATION_RAW" | /usr/local/bin/mlr --icsv --onidx --ofs @ --rs lf cut -f longitude)
-		STATION_COORD="$STATION_LAT,$STATION_LONG"
-		if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$DISABLED_STATUS" != "true" ]] ; then
+		if [[ $(echo "$STATION_LAT" | /usr/bin/grep -Eq "^[-+]?[0-9]+\.?[0-9]*$" && echo "valid") == "valid" ]] && [[ $(echo "$STATION_LONG" | /usr/bin/grep -Eq '^[-+]?[0-9]+\.?[0-9]*$' && echo "valid") == "valid" ]] ; then
+			STCOORD_STATUS="true"
+			STATION_COORD="$STATION_LAT,$STATION_LONG"
+		else
+			STCOORD_STATUS="false"
+			STATION_COORD="n/a"
+			notify "vbb-stations error" "No station data"
+		fi
+		if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] && [[ "$DISABLED_STATUS" != "true" ]] && [[ "$STCOORD_STATUS" == "true" ]] ; then
 			if [[ "$MB_STATUS" == "true" ]] ; then
 				STATION_GMAPS=$(/usr/local/bin/mapbox geocoding --reverse "[$STATION_LONG, $STATION_LAT]" -t address)
 				STATION_ADDR=$(echo "$STATION_GMAPS" | /usr/local/bin/jq '.features[0] .place_name' -M -r)
@@ -526,17 +538,25 @@ else
 		if [[ "$STATION_ADDR" == *"$ADDR_SUBSTRING"* ]] ; then
 			STATION_ADDR="${STATION_ADDR//$ADDR_SUBSTRING}"
 		fi
-		DISTANCE=$(distance $CURRENT_LAT $CURRENT_LONG $STATION_LAT $STATION_LONG)
-		if [[ "$MB_STATUS" == "true" ]] && [[ "$DISABLED_STATUS" != "true" ]] ; then
+		if [[ "$CTCOORD_STATUS" != "false" ]] && [[ "$STCOORD_STATUS" == "true" ]] ; then
+			DISTANCE=$(distance $CURRENT_LAT $CURRENT_LONG $STATION_LAT $STATION_LONG)
+		else
+			DISTANCE="n/a"
+		fi
+		if [[ "$MB_STATUS" == "true" ]] && [[ "$DISABLED_STATUS" != "true" ]] && [[ "$CTCOORD_STATUS" != "false" ]] && [[ "$STCOORD_STATUS" == "true" ]] ; then
 			MB_DIRECTIONS=$(/usr/local/bin/mapbox directions "[$CURRENT_LONG, $CURRENT_LAT]" "[$STATION_LONG, $STATION_LAT]" --profile mapbox.walking --alternatives)
 			WDISTANCE=$(echo "$MB_DIRECTIONS" | /usr/local/bin/jq '.routes[0] .distance' -M -r)
 			WALK_TIME=$(bc <<< "$(echo "$MB_DIRECTIONS" | /usr/local/bin/jq '.routes[0] .duration' -M -r) / 60")
 		else
-			WALK_TIME=$(bc <<< "$DISTANCE / 50")
-			WDISTANCE="n/a"
+			if [[ "$CTCOORD_STATUS" != "false" ]] && [[ "$STCOORD_STATUS" == "true" ]] ; then
+				WALK_TIME=$(bc <<< "$DISTANCE / 50")
+				WDISTANCE="n/a"
+			else
+				WDISTANCE="n/a"
+			fi
 		fi
 		if [[ "$WALK_TIME" == "" ]] ; then
-			WALK_TIME="9"
+			WALK_TIME=$(bc <<< "$NEARBY_RANGE / 55")
 		fi
 		WALK_TIME=$(bc <<< "$WALK_TIME + 1")
 		if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
@@ -730,7 +750,9 @@ if [[ "$WIFI_STATUS" != "inactive" ]] ; then
 		CURRENT_ADDR="${CURRENT_ADDR//$ADDR_SUBSTRING}"
 	fi
 	echo "--Address: ${CURRENT_ADDR//\"}"
-	echo "--Coordinates: $CURRENT_LAT, $CURRENT_LONG | alternate=true"
+	if [[ "$CTCOORD_STATUS" != "false" ]] ; then
+		echo "--Coordinates: $CURRENT_LAT,$CURRENT_LONG | alternate=true"
+	fi
 	echo "-----"
 	if [[ "$CURRENT_INTERNET_STATUS" == "online" ]] ; then
 		echo "--Maps"
