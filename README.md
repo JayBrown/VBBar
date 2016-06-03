@@ -78,6 +78,9 @@ After installing node, install the following software with `npm install -g <soft
 * Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
 
 ## To-do
+* Disable/Enable all nearby stations (checked option)
+* Set preferred nearby station (stations?) (checked option) => plist array
+* Address Finder: remote nearby stations osascript list with operating lines
 * If possible, use a tokenless geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
 * Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis => possible?
 * When printer is selected (automatically or by user), script should check if printer is actually online (i.e. physically connected) => possible?
