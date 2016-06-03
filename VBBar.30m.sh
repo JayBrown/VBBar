@@ -84,6 +84,13 @@ if [[ ! -e "$DEP_TEMP_LOC" ]] ; then
 	touch "$DEP_TEMP_LOC"
 fi
 
+# check for Inconsolata-dz font
+if [[ -e "${HOME}/Library/Fonts/Inconsolata-dz.otf" ]] || [[ -e "/Library/Fonts/Inconsolata-dz.otf" ]]; then
+	FONT="font=Inconsolata-dz size=11"
+else
+	FONT="font=AndaleMono size=12"
+fi
+
 # VBB logo in base64
 VBB_LOGO64="iVBORw0KGgoAAAANSUhEUgAAAEQAAABICAQAAADl2JtCAAAACXBIWXMAABYlAAAW
 JQFJUiTwAAAIrElEQVR4nOyae5AUxRnAb967O7uzs/PYnd2d1xLlqVHAAg2VSlGa
@@ -587,11 +594,11 @@ else
 		echo "-----"
 		if [[ "$DEPARTURES" == "" ]] ; then
 			if [[ "$NEARBY_TOGGLE" == "off" ]] && [[ "$DISABLED_STATUS" == "" ]] ; then
-				echo "--Nearby departures disabled by user. | font=AndaleMono size=12 color=brown"
+				echo "--Nearby departures disabled by user. | $FONT color=brown"
 			elif [[ "$DISABLED_STATUS" == "true" ]] ; then
-				echo "--Station updates & information disabled by user. | font=AndaleMono size=12 color=blue"
+				echo "--Station updates & information disabled by user. | $FONT color=blue"
 			else
-				echo "--No data available. | font=AndaleMono size=12 color=red"
+				echo "--No data available. | $FONT color=red"
 			fi
 		else
 			echo "$DEPARTURES" | while IFS= read -r DEPARTURE
@@ -635,7 +642,7 @@ else
 				fi
 				DEPARTURE_FULL=$(echo "$DEPARTURE  $DEP_TIME")
 				echo "$DEPARTURE_FULL" >> "$DEP_TEMP_LOC"
-				echo "--$DEPARTURE_FULL | color=$MODE_COLOR font=AndaleMono size=12"
+				echo "--$DEPARTURE_FULL | color=$MODE_COLOR $FONT"
 			done
 		fi
 		echo "-----"
@@ -646,7 +653,7 @@ else
 			fi
 		fi
 		echo "--Address: ${STATION_ADDR//\"}"
-		echo "--Coordinates: $STATION_LAT, $STATION_LONG | alternate=true"
+		echo "--Coordinates: $STATION_LAT,$STATION_LONG | alternate=true"
 		if [[ "$DISTANCE" == "1" ]] ; then
 			LDPLURAL=""
 		else
@@ -720,11 +727,11 @@ Approximate Walking Time: $WALK_TIME Minute$TPLURAL" > /tmp/"$STATION_ID"-vbbPri
 				echo "--Walking Directions"
 				echo "$DIRECTIONS" | while IFS= read -r DIR_STEP
 				do
-					echo "----$DIR_STEP | font=AndaleMono size=12 color=black"
+					echo "----$DIR_STEP | $FONT color=black"
 				done
 				echo "-------"
-				echo "----Automated directions are not always correct. | font=AndaleMono size=12 color=blue"
-				echo "----Make sure to check the route on a map. | font=AndaleMono size=12 color=blue"
+				echo "----Automated directions are not always correct. | $FONT color=blue"
+				echo "----Make sure to check the route on a map. | $FONT color=blue"
 			fi
 		else
 			echo "--Show in Apple Maps… | terminal=false bash=/usr/bin/open param1=\"http://maps.apple.com/?ll=$STATION_LAT,$STATION_LONG&spn=0.00674885265,0.0104983203&t=r\""
