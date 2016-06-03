@@ -69,9 +69,9 @@ After installing node, install the following software with `npm install -g <soft
 * [vbb-stations-cli](https://github.com/derhuerst/vbb-stations-cli)
 
 ## Installation
-* [Download the main VBBar script and the VBBar subfolder containing the subscripts](https://github.com/JayBrown/VBBar/releases); expand the archive
-* Move both main script and subfolder into your BitBar plugins directory
-* Double-click on "Inconsolata-dz.otf" to install the monospace font on your system
+* [Download the txz archive](https://github.com/JayBrown/VBBar/releases) and expand
+* Double-click on `Inconsolata-dz.otf` to install the monospace font on your system
+* Move the main script `VBBar.30m.sh` and the subfolder `VBBar` into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
 * During load, VBBar will `chmod +x` the remaining subscripts
