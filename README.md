@@ -54,7 +54,7 @@ Install using [Homebrew](http://brew.sh)
 * [mapbox](https://github.com/mapbox/mapbox-cli-py): `brew install mapbox/cli/mapbox`
 
 ### Homebrew installations (regular)
-Install using [Homebrew](http://brew.sh) with `brew install <software-name>` (or with a similar manager) 
+Install using [Homebrew](http://brew.sh) with `brew install <software-name>` (or with a similar manager)
 
 * [jq](https://stedolan.github.io/jq/)
 * [miller](https://github.com/johnkerl/miller)
@@ -70,7 +70,7 @@ After installing node, install the following software with `npm install -g <soft
 
 ## Installation
 * [Download the txz archive](https://github.com/JayBrown/VBBar/releases) and expand
-* Double-click on `Inconsolata-dz.otf` to install the monospace font on your system
+* Double-click on `RobotoMono-Regular.ttf` to install the monospace font on your system; if you don't install Roboto Mono, VBBar will use Andale Mono instead
 * Move the main script `VBBar.30m.sh` and the subfolder `VBBar` into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
@@ -78,8 +78,11 @@ After installing node, install the following software with `npm install -g <soft
 * Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
 
 ## To-do
+* Move all nearby stations routines to subscripts
+* Tweak font colors for OS X Dark Mode
 * Disable/Enable all nearby stations (checked option)
 * Set preferred nearby station (stations?) (checked option) => plist array
+* Departures/Routes: switch to system default SFNSMono-Regular in macOS 12
 * Address Finder: remote nearby stations osascript list with operating lines
 * If possible, use a tokenless geocoding alternative to Mapbox (bash/cli, address/coordinates geocoding incl. reverse, walking directions, walking distance)
 * Refine address search, e.g. input house number directly; free alternative to kauperts Straßenverzeichnis => possible?
