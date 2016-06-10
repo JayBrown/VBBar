@@ -78,8 +78,10 @@ After installing node, install the following software with `npm install -g <soft
 * Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
 
 ## To-do
-* Move all nearby stations routines to subscripts
-* Tweak font colors for OS X Dark Mode
+* Move all nearby stations routines to subscript `nearby.sh
+* Tweak font colors for OS X Dark Mode; check for f.lux variations
+* Checksum comparison routine for online PDFs of network maps & station maps to determine dl y/n ==> possible?
+* Operating lines: include all stations of a line in submenu ==> possible? Or just cache online PDFs?
 * Disable/Enable all nearby stations (checked option)
 * Set preferred nearby station (stations?) (checked option) => plist array
 * Departures/Routes: switch to system default SFNSMono-Regular in macOS 12
