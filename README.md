@@ -6,7 +6,7 @@
 [![VBBar-depend-clcli](https://img.shields.io/badge/dependency-CoreLocationCLI%202.0.0-green.svg)](https://github.com/fulldecent/corelocationcli)
 [![VBBar-depend-jq](https://img.shields.io/badge/dependency-jq%201.5-green.svg)](https://stedolan.github.io/jq/)
 [![VBBar-depend-mapbox](https://img.shields.io/badge/dependency-mapbox%200.3.1-green.svg)](https://github.com/mapbox/mapbox-cli-py)
-[![VBBar-depend-mlr](https://img.shields.io/badge/dependency-mlr%204.0.0-green.svg)](https://github.com/johnkerl/miller)
+[![VBBar-depend-mlr](https://img.shields.io/badge/dependency-mlr%204.1.0-green.svg)](https://github.com/johnkerl/miller)
 [![VBBar-depend-node](https://img.shields.io/badge/dependency-node%206.2.0-green.svg)](https://nodejs.org)
 [![VBBar-depend-npm](https://img.shields.io/badge/dependency-npm%203.8.9-green.svg)](https://nodejs.org)
 [![VBBar-depend-tnote](https://img.shields.io/badge/dependency-terminal--notifier%201.6.3-green.svg)](https://github.com/alloy/terminal-notifier)
