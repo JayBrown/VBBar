@@ -1,4 +1,4 @@
-![VBBar-platform-osx](https://img.shields.io/badge/platform-OS%20X-lightgrey.svg)
+![VBBar-platform-macos](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![VBBar-code-shell](https://img.shields.io/badge/code-shell-yellow.svg)
 [![VBBar-prereq-bitbar](https://img.shields.io/badge/prerequisite-BitBar%202.0%20beta4-brightgreen.svg)](https://github.com/matryer/bitbar)
 [![VBBar-api-vbb](https://img.shields.io/badge/api-VBB-orange.svg)](http://www.vbb.de/labs)
@@ -17,14 +17,14 @@
 
 # VBBar <img src="https://github.com/JayBrown/VBBar/blob/master/img/VBBar_icon.png" height="20px"/>
 
-**BitBar plugin (shell script) to access and search the Berlin and Brandenburg public transportation information from the OS X menu bar**
+**BitBar plugin (shell script) to access and search the Berlin and Brandenburg public transportation information from the macOS menu bar**
 
 ![VBBar-screengrab](https://github.com/JayBrown/VBBar/blob/master/img/VBBar_grab.png)
 
 ## Current status
 Alpha (pre-release)… the script is still pretty wild; if you know shell scripting, and if you have a bit of experience with the BitBar quirks, and if you know how to improve this thing, then make it so!
 
-Minimum OS X for full functionality: **10.10**
+Minimum macOS for full functionality: **OS X 10.10**
 
 ## Prerequisites
 
@@ -74,11 +74,11 @@ After installing node, install the following software with `npm install -g <soft
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
 * During load, VBBar will `chmod +x` the remaining subscripts
-* Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the OS X keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
+* Once you have your VBB and Mapbox access IDs/tokens, you can enter them in the VBBar submenu ("System"); they will be stored in the macOS keychain; if you don't enter a Mapbox access token, VBBar will cURL the public Google Maps API instead, which precludes certain data like walking directions
 
 ## To-do
 * Move all nearby stations routines to subscript `nearby.sh
-* Tweak font colors for OS X Dark Mode; check for f.lux variations
+* Tweak font colors for Dark Mode; check for f.lux variations
 * Checksum comparison routine for online PDFs of network maps & station maps to determine dl y/n ==> possible?
 * Operating lines: include all stations of a line in submenu ==> possible? Or just cache online PDFs?
 * Disable/Enable all nearby stations (checked option)
