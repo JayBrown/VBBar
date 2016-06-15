@@ -70,7 +70,6 @@ After installing node, install the following software with `npm install -g <soft
 
 ## Installation
 * [Download the txz archive](https://github.com/JayBrown/VBBar/releases) and expand
-* Double-click on `RobotoMono-Regular.ttf` to install the monospace font on your system; if you don't install Roboto Mono, VBBar will use Andale Mono instead
 * Move the main script `VBBar.30m.sh` and the subfolder `VBBar` into your BitBar plugins directory
 * Open your shell, `cd` to your BitBar plugins directory, and enter `chmod +x VBBar.30m.sh`
 * Launch BitBar again; it should now load VBBar
